@@ -4,8 +4,8 @@ Basic AI Agent
 
 ## Student Information
 
-- Name:
-- Course:
+- Name: Anuradha Namdev Jahdav 
+- Course: CSE(AIML)
 - Subject: AI-Augmented Workflow
 
 ## Project Overview
