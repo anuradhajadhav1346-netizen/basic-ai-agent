@@ -1,8 +1,14 @@
-def greet():
-    print("Welcome to the Basic AI Agent!")
+# Program to check pass or fail
 
-def main():
-    greet()
+marks = int(input("Enter your marks: "))
 
-if __name__ == "__main__":
-    main()
+if marks >= 90:
+    print("Grade: A+")
+elif marks >= 75:
+    print("Grade: A")
+elif marks >= 60:
+    print("Grade: B")
+elif marks >= 40:
+    print("Grade: C")
+else:
+    print("Fail")
