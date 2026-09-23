@@ -1,4 +1,3 @@
-
 import time
 from collections import deque
 
@@ -87,7 +86,7 @@ graph = {
 # ============================================================
 
 start = 'A'
-goal = 'K'
+goal = 'E'       # Goal state is E
 
 # Number of times each algorithm will be tested
 runs = 5
@@ -350,4 +349,3 @@ print("\n")
 print("=" * 60)
 print("Experiment completed successfully.")
 print("=" * 60)
-
