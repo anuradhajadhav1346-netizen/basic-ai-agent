@@ -1,11 +1,5 @@
 # AI CONTRIBUTION LOG – SLE-2
 
-**Course:** 02AML204 – Introduction to Artificial Intelligence
-**Experiment:** BFS vs DFS Performance Profiling
-**Student:** YOUR NAME
-**PRN:** YOUR PRN
-**Division:** YOUR DIVISION
-
 ## AI Tools Used
 
 * ChatGPT
