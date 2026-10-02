@@ -56,3 +56,31 @@ BFS and DFS were tested using the same graph. Their node expansion and profiling
 ## AI Contribution
 
 AI was used to understand the SLE-2 requirements, get coding guidance, understand py-spy, and organize the documentation. The actual programs were executed and the profiling results were checked by the student.
+
+
+# SLE-3: AI Contribution Log
+
+## Project
+
+**Basic AI Agent – Architectural Design using Full C4 Model**
+
+## AI Tools Used
+
+* ChatGPT
+* PlantUML / PUM(L) for generating and rendering C4 architecture diagrams
+
+## Contribution of AI
+
+AI assistance was used during SLE-3 to understand the Full C4 Model and the requirements of the architectural design task. ChatGPT was used to obtain guidance for creating the Context, Container, Component, and Code-level diagrams. AI also helped in organizing the project architecture and explaining the purpose of the different system elements.
+
+AI assistance was also used to troubleshoot PlantUML errors and simplify the diagram code so that the diagrams could be generated successfully.
+
+## Student's Contribution
+
+The student reviewed the suggested architecture, selected the relevant system elements, entered and tested the PlantUML code, generated the diagrams, and checked the output. The student prepared the SLE-3 documentation and arranged the diagrams according to the faculty guidelines.
+
+The final architecture, diagrams, documentation, and submission were reviewed by the student before submission.
+
+## Summary
+
+AI was used as a supporting tool for understanding, diagram generation guidance, troubleshooting, and documentation. The student remained responsible for reviewing, modifying, testing, and finalizing the SLE-3 work.

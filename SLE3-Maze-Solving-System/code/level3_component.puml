@@ -1,0 +1,40 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_LEFT_RIGHT()
+
+title C4 Level 3 - Agent Controller Component Diagram
+
+Container_Boundary(agent, "Agent Controller") {
+
+    Component(input_processor, "Input Processor",
+        "Python",
+        "Receives and validates the user's input")
+
+    Component(task_analyzer, "Task Analyzer",
+        "Python",
+        "Analyzes the task and determines the required processing")
+
+    Component(search_controller, "Search Controller",
+        "Python",
+        "Controls BFS / DFS based search operations when required")
+
+    Component(prompt_builder, "Prompt Builder",
+        "Python",
+        "Builds the final prompt for the LLM")
+
+    Component(response_processor, "Response Processor",
+        "Python",
+        "Processes the LLM response before returning it")
+}
+
+Rel(input_processor, task_analyzer, "Passes user task")
+Rel(task_analyzer, search_controller, "Requests search when required")
+Rel(search_controller, prompt_builder, "Provides search result")
+Rel(task_analyzer, prompt_builder, "Provides task information")
+Rel(prompt_builder, response_processor, "Sends generated response")
+Rel(response_processor, input_processor, "Returns final response")
+
+SHOW_LEGEND()
+
+@enduml

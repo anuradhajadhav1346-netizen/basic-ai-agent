@@ -1,0 +1,44 @@
+@startuml
+
+title C4 Level 4 - Basic AI Agent Code Level
+
+class AIAgent {
+    +run(task)
+    +process_task(task)
+    +generate_response(prompt)
+}
+
+class InputHandler {
+    +get_input()
+    +validate_input(task)
+}
+
+class SearchEngine {
+    +bfs(graph, start)
+    +dfs(graph, start)
+}
+
+class PromptManager {
+    +build_prompt(task)
+}
+
+class ResponseHandler {
+    +process_response(response)
+    +display_response(response)
+}
+
+class LLMClient {
+    +send_prompt(prompt)
+    +get_response()
+}
+
+AIAgent --> InputHandler
+AIAgent --> SearchEngine
+AIAgent --> PromptManager
+AIAgent --> LLMClient
+AIAgent --> ResponseHandler
+
+PromptManager --> LLMClient
+LLMClient --> ResponseHandler
+
+@enduml

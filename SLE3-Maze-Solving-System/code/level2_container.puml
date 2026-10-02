@@ -1,0 +1,37 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_LEFT_RIGHT()
+
+title C4 Level 2 - Basic AI Agent Containers
+
+Person(user, "Student / User", "Provides a task or question")
+
+System_Boundary(agent_system, "Basic AI Agent") {
+
+    Container(input, "Input Handler", "Python",
+        "Accepts user input")
+
+    Container(controller, "Agent Controller", "Python",
+        "Controls the agent workflow")
+
+    Container(prompt, "Prompt Manager", "Python",
+        "Creates prompts for the LLM")
+
+    Container(response, "Response Handler", "Python",
+        "Processes and displays the response")
+}
+
+System_Ext(llm, "LLM Service", "OpenAI API or Ollama",
+    "Provides language-model responses")
+
+Rel(user, input, "Provides task")
+Rel(input, controller, "Sends input")
+Rel(controller, prompt, "Requests prompt")
+Rel(prompt, llm, "Sends prompt")
+Rel(llm, response, "Returns response")
+Rel(response, user, "Displays result")
+
+SHOW_LEGEND()
+
+@enduml
