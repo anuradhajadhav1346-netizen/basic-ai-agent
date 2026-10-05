@@ -1,37 +1,28 @@
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+title C4 Level 2 - BFS and DFS Search System
 
-LAYOUT_LEFT_RIGHT()
+left to right direction
 
-title C4 Level 2 - Basic AI Agent Containers
+rectangle "User" as User
 
-Person(user, "Student / User", "Provides a task or question")
+rectangle "Input Module\n[Python]" as Input
+rectangle "Search Controller\n[Python]" as Controller
+rectangle "BFS Module\n[Python]" as BFS
+rectangle "DFS Module\n[Python]" as DFS
+rectangle "Profiling Module\n[py-spy]" as Profiling
+rectangle "Comparison Module\n[Python]" as Comparison
+rectangle "Result Module\n[Python]" as Result
 
-System_Boundary(agent_system, "Basic AI Agent") {
-
-    Container(input, "Input Handler", "Python",
-        "Accepts user input")
-
-    Container(controller, "Agent Controller", "Python",
-        "Controls the agent workflow")
-
-    Container(prompt, "Prompt Manager", "Python",
-        "Creates prompts for the LLM")
-
-    Container(response, "Response Handler", "Python",
-        "Processes and displays the response")
-}
-
-System_Ext(llm, "LLM Service", "OpenAI API or Ollama",
-    "Provides language-model responses")
-
-Rel(user, input, "Provides task")
-Rel(input, controller, "Sends input")
-Rel(controller, prompt, "Requests prompt")
-Rel(prompt, llm, "Sends prompt")
-Rel(llm, response, "Returns response")
-Rel(response, user, "Displays result")
-
-SHOW_LEGEND()
+User --> Input : Provides graph\nand search input
+Input --> Controller : Sends input
+Controller --> BFS : Select BFS
+Controller --> DFS : Select DFS
+BFS --> Profiling : BFS execution
+DFS --> Profiling : DFS execution
+Profiling --> Comparison : Profiling results
+BFS --> Result : Search result
+DFS --> Result : Search result
+Comparison --> Result : Comparison result
+Result --> User : Displays result
 
 @enduml
